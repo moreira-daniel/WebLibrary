@@ -1,0 +1,18 @@
+﻿@model WebLibrary.ViewModels.LivroViewModel
+@Html.AntiForgeryToken()
+@Html.HiddenFor(x => x.Id)
+
+<form>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Nome)
+        @Html.TextBoxFor(x => x.Nome, new { @class = "form-control", @maxlength = 80 })
+        <small id="NomeHelp" class="form-text text-muted">Este campo é obrigatório.</small>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Autor)
+        @Html.TextBoxFor(x => x.Autor, new { @class = "form-control", @maxlength = 80 })
+        <small id="AutorHelp" class="form-text text-muted">Este campo é obrigatório.</small>
+    </div>
+    <p><button type="submit" class="btn btn-primary">Salvar livro</button></p>
+    <p><a class="btn btn-default" href="/home">Voltar para a lista de livros</a></p>
+</form>

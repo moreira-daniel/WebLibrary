@@ -1,0 +1,32 @@
+﻿@model WebLibrary.ViewModels.LivrosViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+
+}
+
+<div class="jumbotron">
+    <h1>Projeto modelo</h1>
+</div>
+
+@using (
+                            Ajax.BeginForm(
+                                "Grid",
+                                "index",
+                                new
+                                {
+                                    //area = "Configuracoes"
+                                },
+                                new AjaxOptions
+                                {
+                                    HttpMethod = "get",
+                                    UpdateTargetId = "formGrid",
+                                },
+                                new
+                                {
+                                    @id = "formGrid",
+                                })
+                            )
+{
+    @Html.Action("Grid", Model)
+}

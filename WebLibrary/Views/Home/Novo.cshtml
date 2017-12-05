@@ -1,0 +1,14 @@
+﻿@model  WebLibrary.ViewModels.LivroViewModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Cadastrar novo livro </h2>
+
+        <div class="content">
+            @using (Html.BeginForm("Novo", "Home", FormMethod.Post, new { }))
+            {
+                @Html.Partial("_livroFormPartial", Model)
+            }
+        </div>
+    </div>
+</div>
